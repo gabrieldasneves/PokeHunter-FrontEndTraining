@@ -96,13 +96,13 @@ export function Home() {
         </button>
         <button
           className="filter-button"
-          onClick={() => handleFilter("incomplete")}
+          onClick={() => handleFilter("Current")}
         >
           inComplete
         </button>
         <button
           className="filter-button"
-          onClick={() => handleFilter("completed")}
+          onClick={() => handleFilter("Completed")}
         >
           completed
         </button>
