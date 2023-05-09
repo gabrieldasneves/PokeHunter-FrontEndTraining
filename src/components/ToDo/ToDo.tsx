@@ -1,14 +1,18 @@
-import React from "react";
-import { DeleteButton } from "../DeleteButton/DeleteButton";
-import { CompleteButton } from "../CompleteButton/CompleteButton";
 import { TodoItem } from "../../types/TodoItemsTypes";
-import { type } from "os";
 
-export function ToDo(todo: TodoItem) {
+type todo = TodoItem & {
+    handleChange: any;
+};
+
+export function ToDo({ id, isCompleted, handleChange, text }: todo) {
     return (
-        <li key={todo.id}>
-            <input type="checkbox" checked={todo.isCompleted} />
-            {todo.text}
+        <li key={id}>
+            <input
+                type="checkbox"
+                checked={isCompleted}
+                onChange={handleChange}
+            />
+            {text}
         </li>
     );
 }

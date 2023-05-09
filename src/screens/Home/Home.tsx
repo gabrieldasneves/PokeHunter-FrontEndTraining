@@ -21,8 +21,9 @@ export function Home() {
             };
             setTodoList([...todoList, newTodo]);
             setInputText("");
+        } else {
+            alert("Please input your task name");
         }
-        alert("Please input your task name");
     };
 
     const handleCheckboxChange = (id: number) => {
@@ -34,6 +35,7 @@ export function Home() {
             }
         });
         setTodoList(updateTodoList);
+        console.log(todoList);
     };
 
     return (
@@ -58,6 +60,7 @@ export function Home() {
                             id={todo.id}
                             text={todo.text}
                             isCompleted={todo.isCompleted}
+                            handleChange={() => handleCheckboxChange(todo.id)}
                         />
                     ))}
                 </ul>
