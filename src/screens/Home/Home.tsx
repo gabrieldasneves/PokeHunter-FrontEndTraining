@@ -21,7 +21,7 @@ export function Home() {
       setTodoList([...todoList, newTodo]);
       setInputText("");
     }
-    console.log(todoList);
+    alert("Please input your task name");
   };
 
   const handleCheckboxChange = (id: number) => {
@@ -43,10 +43,8 @@ export function Home() {
       </div>
       <div className="form">
         <input
-
           id="taskInput"
           placeholder="Create your task"
-
           type="text"
           value={inputText}
           onChange={handleInputChange}
