@@ -7,6 +7,7 @@ import { ToDo } from "../../components/ToDo/ToDo";
 export function Home() {
   const [inputText, setInputText] = useState<string>("");
   const [todoList, setTodoList] = useState<TodoItem[]>([]);
+  const [filterTypes, setFilterType] = useState<string>("all");
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputText(event.target.value);
@@ -38,6 +39,20 @@ export function Home() {
     console.log(todoList);
   };
 
+  const handleFilter = (filter: string) => {
+    setFilterType(filter);
+  };
+
+  const filteredTodoList = () => {
+    if (filterTypes === "completed") {
+      return todoList.filter((todo) => todo.isCompleted);
+    } else if (filterTypes === "incomplete") {
+      return todoList.filter((todo) => !todo.isCompleted);
+    } else {
+      return todoList;
+    }
+  };
+
   return (
     <div className="container">
       <div className="header">
@@ -54,9 +69,19 @@ export function Home() {
         />
         <button onClick={handleAddButtonClick}>+</button>
       </div>
+
+      <div style={{ display: "flex" }}>
+        <button onClick={() => handleFilter("all")}>Dispaly All</button>
+        <button onClick={() => handleFilter("inComplete")}>
+          Dispaly inComplete
+        </button>
+        <button onClick={() => handleFilter("completed")}>
+          Dispaly completed
+        </button>
+      </div>
       <div className="todoListsContainer">
         <ul>
-          {todoList.map((todo) => (
+          {filteredTodoList().map((todo) => (
             <ToDo
               id={todo.id}
               text={todo.text}
