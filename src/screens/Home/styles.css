@@ -2,9 +2,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
-  height: 100%;
-  padding: 24px;
+
+  padding: 68px 24px 24px 24px;
+  background-color: #141416;
+
   height: 100vh;
 }
 
@@ -35,7 +36,7 @@
   justify-content: center;
 }
 
-input {
+#taskInput {
   background-color: #1f1e25;
   border-radius: 4px;
   height: 56px;
@@ -46,12 +47,15 @@ input {
   border-style: inherit;
   max-width: 100%;
   padding-left: 8px;
-  border: 1px solid #fdfcfe
+
+
+  box-shadow: 0 0 0 1px #344239;
+
 }
-input::placeholder {
+#taskInput::placeholder {
   color: #9e9ea7;
 }
-input:focus {
+#taskInput:focus {
   border-style: auto;
   outline: none;
   box-shadow: 0 0 0 1px #31cf67;
@@ -77,9 +81,11 @@ button:hover {
 }
 
 
+
 .container .todoListsContainer ul li{
   display: flex;
   justify-content: center;
   align-items: center;
 
 }
+

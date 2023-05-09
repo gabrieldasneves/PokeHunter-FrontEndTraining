@@ -22,7 +22,18 @@ export function Home() {
             setTodoList([...todoList, newTodo]);
             setInputText("");
         }
-        console.log(todoList);
+        alert("Please input your task name");
+    };
+
+    const handleCheckboxChange = (id: number) => {
+        const updateTodoList = todoList.map((todo) => {
+            if (todo.id === id) {
+                return { ...todo, isCompleted: !todo.isCompleted };
+            } else {
+                return todo;
+            }
+        });
+        setTodoList(updateTodoList);
     };
 
     return (
