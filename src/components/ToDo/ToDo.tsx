@@ -17,6 +17,8 @@ export function ToDo({ id, isCompleted, handleChange, text }: todo) {
                 onChange={handleChange}
             />
             {text}
+
+            <button id="delete">-</button>
         </li>
     );
 }
