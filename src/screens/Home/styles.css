@@ -47,8 +47,7 @@
   border-style: inherit;
   max-width: 100%;
   padding-left: 8px;
-
-
+  
   box-shadow: 0 0 0 1px #344239;
 
 }
@@ -80,12 +79,4 @@ button:hover {
   font-weight: bold;
 }
 
-
-
-.container .todoListsContainer ul li{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-}
 
