@@ -1,12 +1,7 @@
 import React, { useState } from "react";
 
 import "./styles.css";
-
-type TodoItem = {
-  id: number;
-  text: string;
-  isCompleted: boolean;
-};
+import { TodoItem } from "../../types/TodoItemsTypes";
 
 export function Home() {
   const [inputText, setInputText] = useState<string>("");
