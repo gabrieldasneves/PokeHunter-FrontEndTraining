@@ -12,7 +12,9 @@ export function Home() {
         <input type="text" />
         <button>+</button>
       </div>
-      <p>list</p>
+      <div>
+        <p>list</p>
+      </div>
     </div>
   );
 }
