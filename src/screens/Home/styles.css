@@ -2,8 +2,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
   padding: 68px 24px 24px 24px;
   background-color: #141416;
+
   height: 100vh;
 }
 
@@ -46,7 +48,9 @@
   max-width: 100%;
   padding-left: 8px;
 
+
   box-shadow: 0 0 0 1px #344239;
+
 }
 #taskInput::placeholder {
   color: #9e9ea7;
@@ -56,6 +60,7 @@
   outline: none;
   box-shadow: 0 0 0 1px #31cf67;
 }
+
 
 button {
   border: none;
@@ -75,14 +80,12 @@ button:hover {
   font-weight: bold;
 }
 
-.container .todoListsContainer ul li {
+
+
+.container .todoListsContainer ul li{
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
-.container .todoListsContainer ul li {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
