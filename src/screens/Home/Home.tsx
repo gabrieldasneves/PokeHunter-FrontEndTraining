@@ -32,7 +32,10 @@ export function Home() {
       </div>
       <div className="form">
         <input
-          placeholder="my to-do list"
+
+          id="taskInput"
+          placeholder="Create your task"
+
           type="text"
           value={inputText}
           onChange={handleInputChange}
