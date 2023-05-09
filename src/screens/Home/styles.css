@@ -34,7 +34,7 @@
   justify-content: center;
 }
 
-input {
+#taskInput {
   background-color: #1f1e25;
   border-radius: 4px;
   height: 56px;
@@ -48,10 +48,10 @@ input {
 
   box-shadow: 0 0 0 1px #344239;
 }
-input::placeholder {
+#taskInput::placeholder {
   color: #9e9ea7;
 }
-input:focus {
+#taskInput:focus {
   border-style: auto;
   outline: none;
   box-shadow: 0 0 0 1px #31cf67;
