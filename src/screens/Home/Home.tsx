@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import "./styles.css";
 import { TodoItem } from "../../types/TodoItemsTypes";
@@ -14,6 +14,13 @@ export function Home() {
     setInputText(event.target.value);
   };
 
+  useEffect(() => {
+    const storedTodoList = localStorage.getItem("todoList");
+    if (storedTodoList) {
+      setTodoList(JSON.parse(storedTodoList));
+    }
+  }, []);
+
   const handleAddButtonClick = () => {
     if (inputText.trim() !== "") {
       const newTodo: TodoItem = {
@@ -23,6 +30,7 @@ export function Home() {
       };
       setTodoList([...todoList, newTodo]);
       setInputText("");
+      localStorage.setItem("todoList", JSON.stringify([...todoList, newTodo]));
     } else {
       alert("Please input your task name");
     }
@@ -37,7 +45,7 @@ export function Home() {
       }
     });
     setTodoList(updateTodoList);
-    console.log(todoList);
+    localStorage.setItem("todoList", JSON.stringify(updateTodoList));
   };
 
   const handleFilter = (filter: string) => {
@@ -47,6 +55,7 @@ export function Home() {
   const handleDeleteButtonClick = (id: number) => {
     const updatedTodoList = todoList.filter((todo) => todo.id !== id);
     setTodoList(updatedTodoList);
+    localStorage.setItem("todoList", JSON.stringify(updatedTodoList));
   };
 
   const filteredTodoList = () => {
