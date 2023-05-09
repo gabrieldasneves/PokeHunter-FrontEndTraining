@@ -24,6 +24,17 @@ export function Home() {
     console.log(todoList);
   };
 
+  const handleCheckboxChange = (id: number) => {
+    const updateTodoList = todoList.map((todo) => {
+      if (todo.id === id) {
+        return { ...todo, isCompleted: !todo.isCompleted };
+      } else {
+        return todo;
+      }
+    });
+    setTodoList(updateTodoList);
+  };
+
   return (
     <div className="container">
       <div className="header">
@@ -46,7 +57,11 @@ export function Home() {
         <ul>
           {todoList.map((todo) => (
             <li key={todo.id}>
-              <input type="checkbox" checked={todo.isCompleted} />
+              <input
+                type="checkbox"
+                checked={todo.isCompleted}
+                onChange={() => handleCheckboxChange(todo.id)}
+              />
               {todo.text}
             </li>
           ))}
