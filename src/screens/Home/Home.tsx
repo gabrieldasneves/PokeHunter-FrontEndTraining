@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import "./styles.css";
 import { TodoItem } from "../../types/TodoItemsTypes";
 import { ToDo } from "../../components/ToDo/ToDo";
+import DELETE from "../../assets/delete.svg";
 
 export function Home() {
   const [inputText, setInputText] = useState<string>("");
@@ -41,6 +42,11 @@ export function Home() {
 
   const handleFilter = (filter: string) => {
     setFilterType(filter);
+  };
+
+  const handleDeleteButtonClick = (id: number) => {
+    const updatedTodoList = todoList.filter((todo) => todo.id !== id);
+    setTodoList(updatedTodoList);
   };
 
   const filteredTodoList = () => {
@@ -100,7 +106,14 @@ export function Home() {
               text={todo.text}
               isCompleted={todo.isCompleted}
               handleChange={() => handleCheckboxChange(todo.id)}
-            />
+            >
+              <button
+                id="delete"
+                onClick={() => handleDeleteButtonClick(todo.id)}
+              >
+                <img src={DELETE} alt="delete" />
+              </button>
+            </ToDo>
           ))}
         </ul>
       </div>
