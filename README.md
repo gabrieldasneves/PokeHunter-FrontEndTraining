@@ -5,8 +5,9 @@
 <hr>
 <br>
 Give it a try!
+obs: It may take some time to fetch data for the first time
 
-[CLICK HERE](https://storybook.js.org/)
+[CLICK HERE](https://grad-2023-frontend-e.vercel.app/search)
 
 
 <hr>
