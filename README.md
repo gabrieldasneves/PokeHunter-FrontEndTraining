@@ -1,6 +1,6 @@
 # Poke Hunter
 
-## YES! A pokemon project. Made in a Frontend training for newbies as tha challenge to apply everything we've being learning.
+## YES! A pokemon project. Made in a Frontend training for newbies as a challenge to apply everything we've being learning.
 
 <hr>
 <br>
